@@ -7,7 +7,6 @@ Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
 Source: 	%{name}-%{version}.tar.bz2
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 License: 	GPL
 URL:		http://www.gmsys.com/xrpm.html
 Group: System/Configuration/Packaging
