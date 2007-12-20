@@ -48,8 +48,8 @@ cp rpm.py $RPM_BUILD_ROOT%_libdir/xrpm
 cp xrpm.py $RPM_BUILD_ROOT%_libdir/xrpm
 
 (cd $RPM_BUILD_ROOT
-mkdir -p .%_libdir/menu
-cat > .%_libdir/menu/%{name} <<EOF
+mkdir -p .%_menudir
+cat > .%_menudir/%{name} <<EOF
 ?package(%{name}):\
 command="/usr/bin/xrpm"\
 title="Xrpm"\
