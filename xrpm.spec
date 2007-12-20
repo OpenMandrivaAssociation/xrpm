@@ -47,18 +47,16 @@ cp remove.gif $RPM_BUILD_ROOT%_libdir/xrpm
 cp rpm.py $RPM_BUILD_ROOT%_libdir/xrpm
 cp xrpm.py $RPM_BUILD_ROOT%_libdir/xrpm
 
-(cd $RPM_BUILD_ROOT
-mkdir -p .%_menudir
-cat > .%_menudir/%{name} <<EOF
-?package(%{name}):\
-command="/usr/bin/xrpm"\
-title="Xrpm"\
-longtitle="Tool for manipulating software packages"\
-needs="x11"\
-icon="other_archiving.png"\
-section="Configuration/Packaging"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/xrpm
+Name=Xrpm
+Comment=Tool for manipulating software packages
+Icon=other_archiving
+Categories=Settings;PackageManager;
 EOF
-)
  
 %post
 %{update_menus}
@@ -91,5 +89,5 @@ rm -rf $RPM_BUILD_ROOT/
 %_libdir/xrpm/remove.gif
 %_libdir/xrpm/rpm.py
 %_libdir/xrpm/xrpm.py
-%{_menudir}/*
+%{_datadir}/applications/mandriva-*.desktop
 
