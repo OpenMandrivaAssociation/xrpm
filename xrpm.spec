@@ -1,6 +1,6 @@
 %define name xrpm
 %define version 2.2
-%define release %mkrel 10
+%define release %mkrel 11
 
 Summary: 	An alternative package manager for RPMS
 Name: 		%{name}
@@ -11,7 +11,6 @@ BuildRoot: 	%{_tmppath}/%{name}-buildroot
 License: 	GPL
 URL:		http://www.gmsys.com/xrpm.html
 Group: System/Configuration/Packaging
-BuildArch:  noarch
 Requires: tix tkinter
 
 %description
@@ -91,4 +90,3 @@ rm -rf $RPM_BUILD_ROOT/
 %_libdir/xrpm/rpm.py
 %_libdir/xrpm/xrpm.py
 %{_datadir}/applications/mandriva-*.desktop
-
