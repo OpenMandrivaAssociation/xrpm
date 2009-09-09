@@ -1,6 +1,6 @@
 %define name xrpm
 %define version 2.2
-%define release %mkrel 12
+%define release %mkrel 13
 
 Summary: 	An alternative package manager for RPMS
 Name: 		%{name}
